@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>000ooo.ooo</title>
+    <title>GptTooLong.000ooo.ooo</title>
     <style>
         body {
             margin: 0;
@@ -25,6 +25,7 @@
             position: absolute;
             color: white;
             font-size: 1.5rem;
+            transition: all 1s ease;
         }
     </style>
     <script>
@@ -32,8 +33,6 @@
             element.style.top = Math.random() * (window.innerHeight - element.offsetHeight) + 'px';
             element.style.left = Math.random() * (window.innerWidth - element.offsetWidth) + 'px';
         }
-scss
-Copy code
     function moveLetter(letter) {
         generateRandomPosition(letter);
         setTimeout(() => {
@@ -54,9 +53,13 @@ Copy code
             moveLetter(letter);
         }
     }
+
+    window.onload = function() {
+        generateLetters();
+    }
 </script>
 </head>
-<body onload="generateLetters()">
+<body>
     <h1>000ooo.ooo</h1>
 </body>
 </html>
