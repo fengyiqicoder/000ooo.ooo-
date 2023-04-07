@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="zh">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GptTooLong.000ooo.ooo</title>
+    <title>000ooo.ooo</title>
     <style>
         body {
             margin: 0;
@@ -14,6 +15,7 @@
             align-items: center;
             height: 100vh;
         }
+
         h1 {
             color: white;
             font-size: 6rem;
@@ -21,11 +23,11 @@
             z-index: 1000;
             position: absolute;
         }
+
         .letter {
             position: absolute;
             color: white;
             font-size: 1.5rem;
-            transition: all 1s ease;
         }
     </style>
     <script>
@@ -33,33 +35,32 @@
             element.style.top = Math.random() * (window.innerHeight - element.offsetHeight) + 'px';
             element.style.left = Math.random() * (window.innerWidth - element.offsetWidth) + 'px';
         }
-    function moveLetter(letter) {
-        generateRandomPosition(letter);
-        setTimeout(() => {
-            moveLetter(letter);
-        }, 1000);
-    }
 
-    function generateLetters() {
-        const letters = 'o';
-        const count = 100;
-
-        for (let i = 0; i < count; i++) {
-            const letter = document.createElement('div');
-            letter.classList.add('letter');
-            letter.textContent = letters;
-            document.body.appendChild(letter);
+        function moveLetter(letter) {
             generateRandomPosition(letter);
-            moveLetter(letter);
+            setTimeout(() => {
+                moveLetter(letter);
+            }, 700);
         }
-    }
 
-    window.onload = function() {
-        generateLetters();
-    }
-</script>
+        function generateLetters() {
+            const letters = 'o';
+            const count = 100;
+
+            for (let i = 0; i < count; i++) {
+                const letter = document.createElement('div');
+                letter.classList.add('letter');
+                letter.textContent = letters;
+                document.body.appendChild(letter);
+                generateRandomPosition(letter);
+                moveLetter(letter);
+            }
+        }
+    </script>
 </head>
-<body>
+
+<body onload="generateLetters()">
     <h1>000ooo.ooo</h1>
 </body>
+
 </html>
